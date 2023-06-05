@@ -3,8 +3,6 @@ class Controller {
     constructor() {
       // Map to store nodes with their associated WebSocket connections
       this.nodes = new Map();
-  
-      // Server listening on port 8080
       this.wsServer = new WebSocket.Server({ port: 8080 });
   
       // Handle new WebSocket connections
@@ -13,7 +11,7 @@ class Controller {
       });
     }
   
-    // Handle a new WebSocket connection 
+    // Method to handle a new WebSocket connection 
     handleNodeConnection(ws) {
       // Generate a unique ID
       const nodeId = this.generateNodeId();
@@ -40,8 +38,7 @@ class Controller {
       // Parse the message as JSON and extract the command and payload
       const { command, payload } = JSON.parse(message);
   
-      // Perform the appropriate action based on the command
-      switch (command) {
+      switch (command) { // Perform the appropriate action based on the command
         case 'addNode':
           this.addNode(payload);
           break;

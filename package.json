@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/theskim/Controller/issues"
   },
-  "homepage": "https://github.com/theskim/Controller#readme"
+  "homepage": "https://github.com/theskim/Controller#readme",
+  "dependencies": {
+    "ws": "^8.13.0"
+  }
 }
